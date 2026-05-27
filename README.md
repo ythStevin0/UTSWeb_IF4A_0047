@@ -1,2 +1,10 @@
 # UTSWeb_IF4A_0047
-UTS membuat company profile | WarHex
+Website Company Profile **WarHex** — Next-Generation Game Developer
+
+# Identitas
+- Nama: Stevino Adi Nugroho
+- Kelas: IF-4A
+- NIM: 3012410047
+
+# Referensi Desain
+- Screenshot desain: https://gundam-official.com/series, https://www.kotobukiya.co.jp/en/
