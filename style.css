@@ -140,3 +140,98 @@ body{
 .hero-button:hover::before {
   background-color: #1a3673;
 }
+
+/* Series Section */
+.series-section {
+  font-family: "Rajdhani", sans-serif;
+}
+.series-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #111;
+  letter-spacing: 0.05em;
+}
+.series-slash {
+  color: #1a3673 !important;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+.series-desc {
+  border-color: #ddd !important;
+}
+.series-desc p {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+.series-filters .nav-link {
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 50rem;
+  padding: 0.35rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+.series-filters .nav-link.active {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+.series-filters .nav-link:hover:not(.active) {
+  background-color: #f8f9fa;
+  border-color: #ccc;
+}
+.view-all {
+  font-family: "Exo 2", sans-serif;
+  font-size: 0.75rem;
+  color: #1a3673;
+  letter-spacing: 0.1em;
+}
+.view-all i {
+  font-size: 0.8rem;
+}
+
+/* Cards */
+.series-section {
+  background-color: #f0f4f8 !important;
+}
+.series-card {
+  transform: skewX(-10deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.series-card:hover {
+  transform: skewX(-10deg) translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+.unskew {
+  transform: skewX(10deg);
+}
+.series-card img {
+  transform: skewX(10deg) scale(1.15) translateX(-5%);
+}
+.series-num {
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.series-title-text {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.series-genre {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.series-year {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
