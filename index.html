@@ -45,7 +45,7 @@
 
     <main>
         <section class="hero-warhex position-relative overflow-hidden" id="home">
-            <div class="hero-bg" aria-hidden="true" style="background-image: url('assets/WarHex1.png');"></div>
+            <div class="hero-bg" aria-hidden="true"></div>
             <div class="hero-overlay" aria-hidden="true"></div>
 
             <div class="container-fluid hero-content position-relative">
@@ -74,45 +74,19 @@
             </div>
 
             <div class="hero-slider-dots" aria-label="Hero slide indicator">
-                <button class="active" type="button" aria-label="Slide 1" data-slide="0"></button>
-                <button type="button" aria-label="Slide 2" data-slide="1"></button>
-                <button type="button" aria-label="Slide 3" data-slide="2"></button>
-                <button type="button" aria-label="Slide 4" data-slide="3"></button>
+                <button class="active" type="button" aria-label="Slide 1"></button>
+                <button type="button" aria-label="Slide 2"></button>
+                <button type="button" aria-label="Slide 3"></button>
+                <button type="button" aria-label="Slide 4"></button>
+                <button type="button" aria-label="Slide 5"></button>
+                <button type="button" aria-label="Slide 6"></button>
+                <button type="button" aria-label="Slide 7"></button>
+                <button type="button" aria-label="Slide 8"></button>
             </div>
         </section>
 
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const heroBg = document.querySelector('.hero-bg');
-        const heroDots = document.querySelectorAll('.hero-slider-dots button');
-        const slides = [
-            'assets/WarHex1.png',
-            'assets/WarHex2.png',
-            'assets/WarHex3.png',
-            'assets/WarHex4.png'
-        ];
-        let currentSlide = 0;
-
-        function setHeroSlide(index) {
-            currentSlide = index;
-            heroBg.style.backgroundImage = `url('${slides[index]}')`;
-            heroDots.forEach((dot, idx) => {
-                dot.classList.toggle('active', idx === index);
-            });
-        }
-
-        heroDots.forEach((dot) => {
-            dot.addEventListener('click', () => {
-                setHeroSlide(Number(dot.dataset.slide));
-            });
-        });
-
-        setInterval(() => {
-            const nextSlide = (currentSlide + 1) % slides.length;
-            setHeroSlide(nextSlide);
-        }, 5000);
-    </script>
 </body>
 </html>
