@@ -59,3 +59,54 @@ body{
   z-index: 3;
   padding-left: 5%;
 }
+
+.hero-kicker {
+  font-family: "Chakra Petch", sans-serif;
+  color: #1a3673;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-family: "Chakra Petch", sans-serif;
+  color: #111;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+}
+.hero-title span {
+  color: #275296;
+  font-size: 5.5rem;
+  display: block;
+}
+.hero-description {
+  font-family: "Rajdhani", sans-serif;
+  color: #555;
+  font-size: 1.25rem;
+  font-weight: 600;
+  max-width: 450px;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.hero-button {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  color: #1a3673;
+  background-color: #a8bce0;
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
+  padding: 0.8rem 1.5rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  width: 260px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  text-decoration: none;
+  border: none;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
