@@ -235,3 +235,59 @@ body{
   font-size: 0.7rem;
   font-weight: 700;
 }
+
+/* About Section */
+.about-section {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+.about-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.about-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(8, 15, 35, 0.95) 0%,
+    rgba(8, 15, 35, 0.85) 35%,
+    rgba(8, 15, 35, 0.6) 60%,
+    rgba(8, 15, 35, 0.4) 80%,
+    rgba(8, 15, 35, 0.2) 100%);
+}
+.about-kicker {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8ab4f8;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.about-slash {
+  color: #4a90d9;
+  font-weight: 900;
+  font-style: italic;
+}
+.about-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+}
+.about-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  font-weight: 500;
+}
