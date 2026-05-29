@@ -201,18 +201,27 @@ body{
 }
 .series-card {
   transform: skewX(-10deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 .series-card:hover {
-  transform: skewX(-10deg) translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+  transform: skewX(-10deg);
+  box-shadow: none !important;
+  background-color: #c8d7ec !important;
 }
 .unskew {
   transform: skewX(10deg);
 }
 .series-card img {
-  transform: skewX(10deg) scale(1.15) translateX(-5%);
+  width: calc(100% + 70px);
+  max-width: none;
+  margin-left: -35px;
+  transform: skewX(10deg);
+  object-fit: cover !important;
+  object-position: center;
+  border-radius: 0 !important;
 }
 .series-num {
   font-family: "Exo 2", sans-serif;
