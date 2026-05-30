@@ -1,5 +1,5 @@
 # UTSWeb_IF4A_0047
-Website Company Profile **WarHex** — Next-Generation Game Developer
+Website Company Profile WarHex | Next-Generation Game Developer
 
 # Identitas
 - Nama: Stevino Adi Nugroho

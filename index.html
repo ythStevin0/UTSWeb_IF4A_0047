@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WarHex | Enter The Future Battle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-  
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,12 +22,10 @@
                     <li class="nav-item"><span class="warhex-sep" aria-hidden="true"></span></li>
                 </ul>
             </div>
-
             <a class="navbar-brand mx-4 d-inline-flex align-items-center gap-2" href="#">
                 <img class="brand-mark" src="assets/logoWarHex.png" alt="WarHex logo">
                 <span>WARHEX</span>
             </a>
-
             <div class="d-flex align-items-center flex-grow-1 justify-content-end">
                 <ul class="navbar-nav flex-row align-items-center warhex-nav warhex-right">
                     <li class="nav-item"><span class="warhex-sep" aria-hidden="true"></span></li>
@@ -43,8 +39,8 @@
         </div>
     </nav>
 
-    <!--Hero Section-->
     <main>
+        <!-- Hero Section -->
         <section class="hero-warhex position-relative overflow-hidden" id="home">
             <div class="hero-carousel-wrapper">
                 <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
@@ -70,25 +66,21 @@
                     </div>
                 </div>
             </div>
-
             <div class="hero-overlay" aria-hidden="true"></div>
             <div class="container hero-content position-absolute top-0 start-0 h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12 col-md-8 col-lg-6">
                         <p class="hero-kicker mb-3">WELCOME TO WARHEX</p>
-
                         <h1 class="hero-title mb-3">
                             ENTER THE<br>
                             FUTURE OF<br>
                             <span>BATTLE</span>
                         </h1>
-
                         <p class="hero-description mb-4">
                             WarHex is a next-generation gaming
                             experience. No limits. No lag.
                             Just pure battle.
                         </p>
-
                         <a class="btn hero-button d-inline-flex align-items-center justify-content-between" href="#series">
                             <span>EXPLORE NOW</span>
                             <i class="bi bi-arrow-right" aria-hidden="true"></i>
@@ -98,14 +90,14 @@
             </div>
         </section>
 
-        <!--Series Section-->
+        <!-- Series Section -->
         <section id="series" class="series-section py-5">
             <div class="container-fluid px-5">
                 <div class="d-flex align-items-center mb-4">
                     <h2 class="series-title mb-0 me-4 d-flex align-items-center">
-                        <span class="series-slash text-primary me-2">//</span> SERIES
+                        <span class="series-slash me-2">//</span> SERIES
                     </h2>
-                    <div class="series-desc text-muted border-start ps-4">
+                    <div class="series-desc border-start ps-4">
                         <p class="mb-0 small fw-semibold">Introducing the WarHex game series produced so far.</p>
                         <p class="mb-0 small fw-semibold">Experience each story, worldview, and battle.</p>
                     </div>
@@ -113,453 +105,596 @@
 
                 <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
                     <ul class="nav nav-pills series-filters gap-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">ALL</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ACTION</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">RPG</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ADVENTURE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">STRATEGY</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">SURVIVAL</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="#">ALL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">ACTION</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">RPG</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">ADVENTURE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">STRATEGY</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">SURVIVAL</a></li>
                     </ul>
                     <a href="#" class="view-all text-decoration-none fw-bold d-flex align-items-center gap-1">
                         VIEW ALL SERIES <i class="bi bi-chevron-double-right"></i>
                     </a>
                 </div>
-                <!-- Grid -->
+
+                <!-- Cards Grid -->
                 <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4 mb-5">
+
                     <!-- Card 1 -->
                     <div class="col">
-                        <div class="card series-card h-100 bg-white border border-secondary-subtle rounded-4 shadow-sm">
-                            <div class="position-relative p-2 pb-0">
-                                <span class="series-num position-absolute z-2 unskew text-white" style="top: 15px; left: 20px;">01</span>
-                                <img src="assets/WarHex1.png" class="card-img-top rounded-3" alt="Iron Horizon" style="height: 200px; object-fit: cover;">
+                        <div class="card series-card h-100">
+                            <div class="position-relative">
+                                <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">01</span>
+                                <img src="assets/WarHex1.png" class="card-img-top" alt="Iron Horizon" style="height:185px;object-fit:cover;">
                             </div>
-                            <div class="card-body d-flex flex-column p-4 unskew">
-                                <h5 class="series-title-text mb-4 text-dark">IRON HORIZON</h5>
-                                <div class="d-flex align-items-center mt-auto border-top border-secondary-subtle pt-3">
-                                    <span class="series-genre text-secondary pe-3">MECHA / ACTION</span>
-                                    <span class="series-year text-secondary border-start border-secondary-subtle ps-3">2024</span>
+                            <div class="card-body d-flex flex-column p-0 unskew">
+                                <div class="px-3 pt-3 pb-2">
+                                    <h5 class="series-title-text mb-0">IRON HORIZON</h5>
+                                </div>
+                                <div class="d-flex align-items-center mt-auto border-top px-3 py-2">
+                                    <span class="series-genre pe-3">MECHA / ACTION</span>
+                                    <span class="series-year border-start ps-3">2024</span>
                                 </div>
                             </div>
-                            <div class="position-absolute bottom-0 end-0 p-3 unskew" style="transform-origin: bottom right;">
+                            <div class="position-absolute bottom-0 end-0 p-3 unskew">
                                 <a href="#" class="series-card-link" aria-label="Open series details">
                                     <i class="bi bi-arrow-up-right fw-bold fs-5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Card 2 -->
                     <div class="col">
-                        <div class="card series-card h-100 bg-white border border-secondary-subtle rounded-4 shadow-sm">
-                            <div class="position-relative p-2 pb-0">
-                                <span class="series-num position-absolute z-2 unskew text-white" style="top: 15px; left: 20px;">02</span>
-                                <img src="assets/WarHex2.png" class="card-img-top rounded-3" alt="Project Nova" style="height: 200px; object-fit: cover;">
+                        <div class="card series-card h-100">
+                            <div class="position-relative">
+                                <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">02</span>
+                                <img src="assets/WarHex2.png" class="card-img-top" alt="Project Nova" style="height:185px;object-fit:cover;">
                             </div>
-                            <div class="card-body d-flex flex-column p-4 unskew">
-                                <h5 class="series-title-text mb-4 text-dark">PROJECT NOVA</h5>
-                                <div class="d-flex align-items-center mt-auto border-top border-secondary-subtle pt-3">
-                                    <span class="series-genre text-secondary pe-3">RPG / ADVENTURE</span>
-                                    <span class="series-year text-secondary border-start border-secondary-subtle ps-3">2024</span>
+                            <div class="card-body d-flex flex-column p-0 unskew">
+                                <div class="px-3 pt-3 pb-2">
+                                    <h5 class="series-title-text mb-0">PROJECT NOVA</h5>
+                                </div>
+                                <div class="d-flex align-items-center mt-auto border-top px-3 py-2">
+                                    <span class="series-genre pe-3">RPG / ADVENTURE</span>
+                                    <span class="series-year border-start ps-3">2024</span>
                                 </div>
                             </div>
-                            <div class="position-absolute bottom-0 end-0 p-3 unskew" style="transform-origin: bottom right;">
+                            <div class="position-absolute bottom-0 end-0 p-3 unskew">
                                 <a href="#" class="series-card-link" aria-label="Open series details">
                                     <i class="bi bi-arrow-up-right fw-bold fs-5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Card 3 -->
                     <div class="col">
-                        <div class="card series-card h-100 bg-white border border-secondary-subtle rounded-4 shadow-sm">
-                            <div class="position-relative p-2 pb-0">
-                                <span class="series-num position-absolute z-2 unskew text-white" style="top: 15px; left: 20px;">03</span>
-                                <img src="assets/WarHex3.png" class="card-img-top rounded-3" alt="Zero Frontier" style="height: 200px; object-fit: cover;">
+                        <div class="card series-card h-100">
+                            <div class="position-relative">
+                                <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">03</span>
+                                <img src="assets/WarHex3.png" class="card-img-top" alt="Zero Frontier" style="height:185px;object-fit:cover;">
                             </div>
-                            <div class="card-body d-flex flex-column p-4 unskew">
-                                <h5 class="series-title-text mb-4 text-dark">ZERO FRONTIER</h5>
-                                <div class="d-flex align-items-center mt-auto border-top border-secondary-subtle pt-3">
-                                    <span class="series-genre text-secondary pe-3">SURVIVAL / STRATEGY</span>
-                                    <span class="series-year text-secondary border-start border-secondary-subtle ps-3">2023</span>
+                            <div class="card-body d-flex flex-column p-0 unskew">
+                                <div class="px-3 pt-3 pb-2">
+                                    <h5 class="series-title-text mb-0">ZERO FRONTIER</h5>
+                                </div>
+                                <div class="d-flex align-items-center mt-auto border-top px-3 py-2">
+                                    <span class="series-genre pe-3">SURVIVAL / STRATEGY</span>
+                                    <span class="series-year border-start ps-3">2023</span>
                                 </div>
                             </div>
-                            <div class="position-absolute bottom-0 end-0 p-3 unskew" style="transform-origin: bottom right;">
+                            <div class="position-absolute bottom-0 end-0 p-3 unskew">
                                 <a href="#" class="series-card-link" aria-label="Open series details">
                                     <i class="bi bi-arrow-up-right fw-bold fs-5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Card 4 -->
                     <div class="col">
-                        <div class="card series-card h-100 bg-white border border-secondary-subtle rounded-4 shadow-sm">
-                            <div class="position-relative p-2 pb-0">
-                                <span class="series-num position-absolute z-2 unskew text-white" style="top: 15px; left: 20px;">04</span>
-                                <img src="assets/WarHex4.png" class="card-img-top rounded-3" alt="Desert Echo" style="height: 200px; object-fit: cover;">
+                        <div class="card series-card h-100">
+                            <div class="position-relative">
+                                <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">04</span>
+                                <img src="assets/WarHex4.png" class="card-img-top" alt="Desert Echo" style="height:185px;object-fit:cover;">
                             </div>
-                            <div class="card-body d-flex flex-column p-4 unskew">
-                                <h5 class="series-title-text mb-4 text-dark">DESERT ECHO</h5>
-                                <div class="d-flex align-items-center mt-auto border-top border-secondary-subtle pt-3">
-                                    <span class="series-genre text-secondary pe-3">TACTICAL / RPG</span>
-                                    <span class="series-year text-secondary border-start border-secondary-subtle ps-3">2023</span>
+                            <div class="card-body d-flex flex-column p-0 unskew">
+                                <div class="px-3 pt-3 pb-2">
+                                    <h5 class="series-title-text mb-0">DESERT ECHO</h5>
+                                </div>
+                                <div class="d-flex align-items-center mt-auto border-top px-3 py-2">
+                                    <span class="series-genre pe-3">TACTICAL / RPG</span>
+                                    <span class="series-year border-start ps-3">2023</span>
                                 </div>
                             </div>
-                            <div class="position-absolute bottom-0 end-0 p-3 unskew" style="transform-origin: bottom right;">
+                            <div class="position-absolute bottom-0 end-0 p-3 unskew">
                                 <a href="#" class="series-card-link" aria-label="Open series details">
                                     <i class="bi bi-arrow-up-right fw-bold fs-5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Card 5 -->
                     <div class="col">
-                        <div class="card series-card h-100 bg-white border border-secondary-subtle rounded-4 shadow-sm">
-                            <div class="position-relative p-2 pb-0">
-                                <span class="series-num position-absolute z-2 unskew text-white" style="top: 15px; left: 20px;">05</span>
-                                <img src="assets/WarHex1.png" class="card-img-top rounded-3" alt="Shadow Protocol" style="height: 200px; object-fit: cover;">
+                        <div class="card series-card h-100">
+                            <div class="position-relative">
+                                <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">05</span>
+                                <img src="assets/WarHex1.png" class="card-img-top" alt="Shadow Protocol" style="height:185px;object-fit:cover;">
                             </div>
-                            <div class="card-body d-flex flex-column p-4 unskew">
-                                <h5 class="series-title-text mb-4 text-dark">SHADOW PROTOCOL</h5>
-                                <div class="d-flex align-items-center mt-auto border-top border-secondary-subtle pt-3">
-                                    <span class="series-genre text-secondary pe-3">ACTION / STEALTH</span>
-                                    <span class="series-year text-secondary border-start border-secondary-subtle ps-3">2022</span>
+                            <div class="card-body d-flex flex-column p-0 unskew">
+                                <div class="px-3 pt-3 pb-2">
+                                    <h5 class="series-title-text mb-0">SHADOW PROTOCOL</h5>
+                                </div>
+                                <div class="d-flex align-items-center mt-auto border-top px-3 py-2">
+                                    <span class="series-genre pe-3">ACTION / STEALTH</span>
+                                    <span class="series-year border-start ps-3">2022</span>
                                 </div>
                             </div>
-                            <div class="position-absolute bottom-0 end-0 p-3 unskew" style="transform-origin: bottom right;">
+                            <div class="position-absolute bottom-0 end-0 p-3 unskew">
                                 <a href="#" class="series-card-link" aria-label="Open series details">
                                     <i class="bi bi-arrow-up-right fw-bold fs-5"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
-             <!--About Section-->
-<section id="about" class="about-section position-relative">
-    <div class="about-bg">
-        <img src="assets/WarHex5.jpg" alt="About background" class="w-100 h-100" style="object-fit:cover;">
-        <div class="about-overlay"></div>
-    </div>
+            <!-- News Section -->
+            <section id="news" class="news-section">
+                <div class="container-fluid px-5">
 
-    <div class="about-scanlines" aria-hidden="true"></div>
-
-    <div class="container-fluid px-5 position-relative" style="z-index:2;">
-        <div class="row g-5 align-items-stretch py-5">
-
-            <div class="col-12 col-lg-5 d-flex flex-column justify-content-center">
-
-                <p class="about-kicker mb-3">
-                    <span class="about-slash me-2">//</span> ABOUT WARHEX
-                </p>
-                <h2 class="about-title mb-4">
-                    MORE THAN GAMES.<br>
-                    WE BUILD WORLDS.
-                </h2>
-                <p class="about-desc mb-5">
-                    WarHex Inc. is an independent game studio pursuing
-                    next-generation offline gaming experiences. We focus on
-                    three pillars — "Immersion", "Technology", and
-                    "Player Experience" — to create unforgettable works.
-                </p>
-
-                <div class="d-flex gap-4 mb-5 flex-wrap">
-                    <div class="about-stat-item">
-                        <span class="about-stat-num">12+</span>
-                        <span class="about-stat-label">YEARS IN<br>BATTLE</span>
-                    </div>
-                    <div class="about-stat-divider"></div>
-                    <div class="about-stat-item">
-                        <span class="about-stat-num">5</span>
-                        <span class="about-stat-label">GAME<br>SERIES</span>
-                    </div>
-                    <div class="about-stat-divider"></div>
-                    <div class="about-stat-item">
-                        <span class="about-stat-num">4M+</span>
-                        <span class="about-stat-label">ACTIVE<br>PLAYERS</span>
-                    </div>
-                    <div class="about-stat-divider"></div>
-                    <div class="about-stat-item">
-                        <span class="about-stat-num">30+</span>
-                        <span class="about-stat-label">AWARDS<br>WON</span>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-column gap-2 mb-5">
-                    <p class="about-block-label mb-2"><span class="about-slash me-2">//</span> CORE PILLARS</p>
-                    <div class="about-pillar-item d-flex align-items-center gap-3">
-                        <div class="about-pillar-icon"><i class="bi bi-eye-fill"></i></div>
-                        <div class="flex-grow-1">
-                            <span class="about-pillar-name">IMMERSION</span>
-                            <p class="about-pillar-desc mb-0">Deep cinematic worlds that pull you in and never let go.</p>
-                        </div>
-                        <span class="about-pillar-num">01</span>
-                    </div>
-                    <div class="about-pillar-item d-flex align-items-center gap-3">
-                        <div class="about-pillar-icon"><i class="bi bi-cpu-fill"></i></div>
-                        <div class="flex-grow-1">
-                            <span class="about-pillar-name">TECHNOLOGY</span>
-                            <p class="about-pillar-desc mb-0">Cutting-edge engine built for zero-lag next-gen performance.</p>
-                        </div>
-                        <span class="about-pillar-num">02</span>
-                    </div>
-                    <div class="about-pillar-item d-flex align-items-center gap-3">
-                        <div class="about-pillar-icon"><i class="bi bi-person-fill-gear"></i></div>
-                        <div class="flex-grow-1">
-                            <span class="about-pillar-name">PLAYER EXPERIENCE</span>
-                            <p class="about-pillar-desc mb-0">Every mechanic crafted around the warrior inside you.</p>
-                        </div>
-                        <span class="about-pillar-num">03</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-7 d-flex flex-column gap-4 justify-content-center">
-                <div class="about-right-panel">
-                    <div class="about-panel-header">
-                        <span class="about-panel-tag">01</span>
-                        <span class="about-panel-title">LATEST TRAILER</span>
-                        <span class="about-panel-line"></span>
-                        <span class="about-panel-badge">IRON HORIZON — 2024</span>
-                    </div>
-                    <div class="about-video-wrap">
-                        <iframe
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                            title="WarHex Iron Horizon Trailer"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-
-                        <div class="about-video-overlay" onclick="this.style.display='none'; this.previousElementSibling.src += '?autoplay=1'">
-                            <div class="about-play-btn">
-                                <i class="bi bi-play-fill"></i>
+                    <!-- Section header -->
+                    <div class="d-flex align-items-center justify-content-between mb-0 pb-4 news-header-row">
+                        <div class="d-flex align-items-center gap-4">
+                            <h2 class="news-section-title mb-0 d-flex align-items-center">
+                                <span class="series-slash me-2">//</span> NEWS
+                            </h2>
+                            <div class="series-desc border-start ps-4">
+                                <p class="mb-0 small fw-semibold">Latest updates, announcements, and battle reports.</p>
                             </div>
-                            <span class="about-video-label">WATCH TRAILER</span>
                         </div>
+                        <a href="#" class="view-all text-decoration-none fw-bold d-flex align-items-center gap-1">
+                            VIEW ALL NEWS <i class="bi bi-chevron-double-right"></i>
+                        </a>
                     </div>
-                </div>
 
-                <div class="row g-4">
-                    <div class="col-12 col-md-6">
-                        <div class="about-right-panel h-100">
-                            <div class="about-panel-header mb-3">
-                                <span class="about-panel-tag">02</span>
-                                <span class="about-panel-title">ENGINE & TECH</span>
-                                <span class="about-panel-line"></span>
+                    <!-- News grid -->
+                    <div class="news-grid">
+
+                        <!-- Row 1 -->
+                        <div class="news-row">
+                            <!-- Item 1 -->
+                            <div class="news-item">
+                                <a href="#" class="news-thumb-link">
+                                    <img src="assets/WarHex1.png" alt="Iron Horizon Update" class="news-thumb">
+                                </a>
+                                <div class="news-body">
+                                    <a href="#" class="news-title-link">
+                                        Iron Horizon Season 2 Officially Announced — New Mech Classes and Expanded Campaign Revealed
+                                    </a>
+                                    <div class="news-meta">
+                                        <div class="news-tags">
+                                            <a href="#" class="news-tag">IRON HORIZON</a>
+                                            <a href="#" class="news-tag">ANNOUNCEMENT</a>
+                                        </div>
+                                        <span class="news-date">2024.12.01</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="d-flex flex-column gap-2">
-                                <div class="about-tech-row">
-                                    <i class="bi bi-lightning-charge-fill about-tech-icon"></i>
-                                    <div>
-                                        <span class="about-tech-label">HEX ENGINE 4.0</span>
-                                        <span class="about-tech-val">Proprietary real-time renderer</span>
-                                    </div>
-                                </div>
-                                <div class="about-tech-row">
-                                    <i class="bi bi-hdd-fill about-tech-icon"></i>
-                                    <div>
-                                        <span class="about-tech-label">OFFLINE-FIRST</span>
-                                        <span class="about-tech-val">Zero internet dependency</span>
-                                    </div>
-                                </div>
-                                <div class="about-tech-row">
-                                    <i class="bi bi-display-fill about-tech-icon"></i>
-                                    <div>
-                                        <span class="about-tech-label">4K / 120FPS</span>
-                                        <span class="about-tech-val">Ultra-high performance mode</span>
-                                    </div>
-                                </div>
-                                <div class="about-tech-row">
-                                    <i class="bi bi-soundwave about-tech-icon"></i>
-                                    <div>
-                                        <span class="about-tech-label">SPATIAL AUDIO</span>
-                                        <span class="about-tech-val">360° battlefield soundscape</span>
-                                    </div>
-                                </div>
-                                <div class="about-tech-row">
-                                    <i class="bi bi-shield-fill-check about-tech-icon"></i>
-                                    <div>
-                                        <span class="about-tech-label">ANTI-CHEAT CORE</span>
-                                        <span class="about-tech-val">Military-grade protection layer</span>
+
+                            <div class="news-col-divider"></div>
+
+                            <!-- Item 2 -->
+                            <div class="news-item">
+                                <a href="#" class="news-thumb-link">
+                                    <img src="assets/WarHex2.png" alt="Project Nova" class="news-thumb">
+                                </a>
+                                <div class="news-body">
+                                    <a href="#" class="news-title-link">
+                                        Project Nova Version 3.2 Patch Notes — Major Balance Changes and New RPG Skill Tree
+                                    </a>
+                                    <div class="news-meta">
+                                        <div class="news-tags">
+                                            <a href="#" class="news-tag">PROJECT NOVA</a>
+                                            <a href="#" class="news-tag">PATCH NOTES</a>
+                                        </div>
+                                        <span class="news-date">2024.11.28</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-12 col-md-6">
-                        <div class="about-right-panel h-100">
-                            <div class="about-panel-header mb-3">
-                                <span class="about-panel-tag">03</span>
-                                <span class="about-panel-title">RECOGNITION</span>
-                                <span class="about-panel-line"></span>
+                        <div class="news-row-divider"></div>
+
+                        <!-- Row 2 -->
+                        <div class="news-row">
+                            <!-- Item 3 -->
+                            <div class="news-item">
+                                <a href="#" class="news-thumb-link">
+                                    <img src="assets/WarHex3.png" alt="Zero Frontier" class="news-thumb">
+                                </a>
+                                <div class="news-body">
+                                    <a href="#" class="news-title-link">
+                                        WarHex Global Tournament 2024 — Zero Frontier Ranked Season Opens Registration for All Regions
+                                    </a>
+                                    <div class="news-meta">
+                                        <div class="news-tags">
+                                            <a href="#" class="news-tag">ALL SERIES</a>
+                                            <a href="#" class="news-tag">TOURNAMENTS</a>
+                                        </div>
+                                        <span class="news-date">2024.11.25</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="d-flex flex-column gap-2">
-                                <div class="about-award-row">
-                                    <div class="about-award-icon gold"><i class="bi bi-trophy-fill"></i></div>
-                                    <div>
-                                        <span class="about-award-name">GOTY 2024</span>
-                                        <span class="about-award-org">Global Game Awards — Iron Horizon</span>
+
+                            <div class="news-col-divider"></div>
+
+                            <!-- Item 4 -->
+                            <div class="news-item">
+                                <a href="#" class="news-thumb-link">
+                                    <img src="assets/WarHex4.png" alt="Desert Echo" class="news-thumb">
+                                </a>
+                                <div class="news-body">
+                                    <a href="#" class="news-title-link">
+                                        Desert Echo Expansion "Ashlands Protocol" Coming Q1 2025 — New Maps, Weapons, and Co-op Mode
+                                    </a>
+                                    <div class="news-meta">
+                                        <div class="news-tags">
+                                            <a href="#" class="news-tag">DESERT ECHO</a>
+                                            <a href="#" class="news-tag">DLC</a>
+                                        </div>
+                                        <span class="news-date">2024.11.20</span>
                                     </div>
                                 </div>
-                                <div class="about-award-row">
-                                    <div class="about-award-icon silver"><i class="bi bi-trophy-fill"></i></div>
-                                    <div>
-                                        <span class="about-award-name">BEST ENGINE</span>
-                                        <span class="about-award-org">Dev Tech Summit 2024</span>
+                            </div>
+                        </div>
+
+                        <div class="news-row-divider"></div>
+
+                        <!-- Row 3 -->
+                        <div class="news-row">
+                            <!-- Item 5 -->
+                            <div class="news-item">
+                                <a href="#" class="news-thumb-link">
+                                    <img src="assets/WarHex1.png" alt="WarHex Awards" class="news-thumb">
+                                </a>
+                                <div class="news-body">
+                                    <a href="#" class="news-title-link">
+                                        WarHex Inc. Wins "Best Independent Studio" at Global Game Awards 2024 — Full Ceremony Recap
+                                    </a>
+                                    <div class="news-meta">
+                                        <div class="news-tags">
+                                            <a href="#" class="news-tag">WARHEX</a>
+                                            <a href="#" class="news-tag">AWARDS</a>
+                                        </div>
+                                        <span class="news-date">2024.11.15</span>
                                     </div>
                                 </div>
-                                <div class="about-award-row">
-                                    <div class="about-award-icon gold"><i class="bi bi-star-fill"></i></div>
-                                    <div>
-                                        <span class="about-award-name">PLAYERS' CHOICE</span>
-                                        <span class="about-award-org">GamersVote 2023 — Zero Frontier</span>
+                            </div>
+
+                            <div class="news-col-divider"></div>
+
+                            <!-- Item 6 -->
+                            <div class="news-item">
+                                <a href="#" class="news-thumb-link">
+                                    <img src="assets/WarHex2.png" alt="Shadow Protocol" class="news-thumb">
+                                </a>
+                                <div class="news-body">
+                                    <a href="#" class="news-title-link">
+                                        Shadow Protocol Free Weekend Event — Play the Full Game at No Cost November 22–24
+                                    </a>
+                                    <div class="news-meta">
+                                        <div class="news-tags">
+                                            <a href="#" class="news-tag">SHADOW PROTOCOL</a>
+                                            <a href="#" class="news-tag">EVENTS</a>
+                                        </div>
+                                        <span class="news-date">2024.11.10</span>
                                     </div>
                                 </div>
-                                <div class="about-award-row">
-                                    <div class="about-award-icon bronze"><i class="bi bi-patch-check-fill"></i></div>
-                                    <div>
-                                        <span class="about-award-name">BEST NARRATIVE</span>
-                                        <span class="about-award-org">IndieForce Awards 2022</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end news-grid -->
+
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about-section position-relative">
+                <div class="about-bg">
+                    <img src="assets/WarHex5.jpg" alt="About background" class="w-100 h-100" style="object-fit:cover;">
+                    <div class="about-overlay"></div>
+                </div>
+                <div class="about-scanlines" aria-hidden="true"></div>
+
+                <div class="container-fluid px-5 position-relative" style="z-index:2;">
+                    <div class="row g-5 align-items-stretch py-5">
+
+                        <!-- Left -->
+                        <div class="col-12 col-lg-5 d-flex flex-column justify-content-center">
+                            <p class="about-kicker mb-3">
+                                <span class="about-slash me-2">//</span> ABOUT WARHEX
+                            </p>
+                            <h2 class="about-title mb-4">
+                                MORE THAN GAMES.<br>
+                                WE BUILD WORLDS.
+                            </h2>
+                            <p class="about-desc mb-5">
+                                WarHex Inc. is an independent game studio pursuing
+                                next-generation offline gaming experiences. We focus on
+                                three pillars — "Immersion", "Technology", and
+                                "Player Experience" — to create unforgettable works.
+                            </p>
+                            <div class="d-flex gap-4 mb-5 flex-wrap">
+                                <div class="about-stat-item">
+                                    <span class="about-stat-num">12+</span>
+                                    <span class="about-stat-label">YEARS IN<br>BATTLE</span>
+                                </div>
+                                <div class="about-stat-divider"></div>
+                                <div class="about-stat-item">
+                                    <span class="about-stat-num">5</span>
+                                    <span class="about-stat-label">GAME<br>SERIES</span>
+                                </div>
+                                <div class="about-stat-divider"></div>
+                                <div class="about-stat-item">
+                                    <span class="about-stat-num">4M+</span>
+                                    <span class="about-stat-label">ACTIVE<br>PLAYERS</span>
+                                </div>
+                                <div class="about-stat-divider"></div>
+                                <div class="about-stat-item">
+                                    <span class="about-stat-num">30+</span>
+                                    <span class="about-stat-label">AWARDS<br>WON</span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gap-2 mb-5">
+                                <p class="about-block-label mb-2"><span class="about-slash me-2">//</span> CORE PILLARS</p>
+                                <div class="about-pillar-item d-flex align-items-center gap-3">
+                                    <div class="about-pillar-icon"><i class="bi bi-eye-fill"></i></div>
+                                    <div class="flex-grow-1">
+                                        <span class="about-pillar-name">IMMERSION</span>
+                                        <p class="about-pillar-desc mb-0">Deep cinematic worlds that pull you in and never let go.</p>
+                                    </div>
+                                    <span class="about-pillar-num">01</span>
+                                </div>
+                                <div class="about-pillar-item d-flex align-items-center gap-3">
+                                    <div class="about-pillar-icon"><i class="bi bi-cpu-fill"></i></div>
+                                    <div class="flex-grow-1">
+                                        <span class="about-pillar-name">TECHNOLOGY</span>
+                                        <p class="about-pillar-desc mb-0">Cutting-edge engine built for zero-lag next-gen performance.</p>
+                                    </div>
+                                    <span class="about-pillar-num">02</span>
+                                </div>
+                                <div class="about-pillar-item d-flex align-items-center gap-3">
+                                    <div class="about-pillar-icon"><i class="bi bi-person-fill-gear"></i></div>
+                                    <div class="flex-grow-1">
+                                        <span class="about-pillar-name">PLAYER EXPERIENCE</span>
+                                        <p class="about-pillar-desc mb-0">Every mechanic crafted around the warrior inside you.</p>
+                                    </div>
+                                    <span class="about-pillar-num">03</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right -->
+                        <div class="col-12 col-lg-7 d-flex flex-column gap-4 justify-content-center">
+                            <div class="about-right-panel">
+                                <div class="about-panel-header">
+                                    <span class="about-panel-tag">01</span>
+                                    <span class="about-panel-title">LATEST TRAILER</span>
+                                    <span class="about-panel-line"></span>
+                                    <span class="about-panel-badge">IRON HORIZON — 2024</span>
+                                </div>
+                                <div class="about-video-wrap">
+                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                        title="WarHex Iron Horizon Trailer" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                    <div class="about-video-overlay" onclick="this.style.display='none'; this.previousElementSibling.src += '?autoplay=1'">
+                                        <div class="about-play-btn"><i class="bi bi-play-fill"></i></div>
+                                        <span class="about-video-label">WATCH TRAILER</span>
                                     </div>
                                 </div>
-                                <div class="about-award-row">
-                                    <div class="about-award-icon silver"><i class="bi bi-shield-fill"></i></div>
-                                    <div>
-                                        <span class="about-award-name">MOST IMMERSIVE</span>
-                                        <span class="about-award-org">XR Experience Expo 2023</span>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-12 col-md-6">
+                                    <div class="about-right-panel h-100">
+                                        <div class="about-panel-header mb-3">
+                                            <span class="about-panel-tag">02</span>
+                                            <span class="about-panel-title">ENGINE & TECH</span>
+                                            <span class="about-panel-line"></span>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2">
+                                            <div class="about-tech-row">
+                                                <i class="bi bi-lightning-charge-fill about-tech-icon"></i>
+                                                <div>
+                                                    <span class="about-tech-label">HEX ENGINE 4.0</span>
+                                                    <span class="about-tech-val">Proprietary real-time renderer</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-tech-row">
+                                                <i class="bi bi-hdd-fill about-tech-icon"></i>
+                                                <div>
+                                                    <span class="about-tech-label">OFFLINE-FIRST</span>
+                                                    <span class="about-tech-val">Zero internet dependency</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-tech-row">
+                                                <i class="bi bi-display-fill about-tech-icon"></i>
+                                                <div>
+                                                    <span class="about-tech-label">4K / 120FPS</span>
+                                                    <span class="about-tech-val">Ultra-high performance mode</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-tech-row">
+                                                <i class="bi bi-soundwave about-tech-icon"></i>
+                                                <div>
+                                                    <span class="about-tech-label">SPATIAL AUDIO</span>
+                                                    <span class="about-tech-val">360° battlefield soundscape</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-tech-row">
+                                                <i class="bi bi-shield-fill-check about-tech-icon"></i>
+                                                <div>
+                                                    <span class="about-tech-label">ANTI-CHEAT CORE</span>
+                                                    <span class="about-tech-val">Military-grade protection layer</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="about-right-panel h-100">
+                                        <div class="about-panel-header mb-3">
+                                            <span class="about-panel-tag">03</span>
+                                            <span class="about-panel-title">RECOGNITION</span>
+                                            <span class="about-panel-line"></span>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2">
+                                            <div class="about-award-row">
+                                                <div class="about-award-icon gold"><i class="bi bi-trophy-fill"></i></div>
+                                                <div>
+                                                    <span class="about-award-name">GOTY 2024</span>
+                                                    <span class="about-award-org">Global Game Awards — Iron Horizon</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-award-row">
+                                                <div class="about-award-icon silver"><i class="bi bi-trophy-fill"></i></div>
+                                                <div>
+                                                    <span class="about-award-name">BEST ENGINE</span>
+                                                    <span class="about-award-org">Dev Tech Summit 2024</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-award-row">
+                                                <div class="about-award-icon gold"><i class="bi bi-star-fill"></i></div>
+                                                <div>
+                                                    <span class="about-award-name">PLAYERS' CHOICE</span>
+                                                    <span class="about-award-org">GamersVote 2023 — Zero Frontier</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-award-row">
+                                                <div class="about-award-icon bronze"><i class="bi bi-patch-check-fill"></i></div>
+                                                <div>
+                                                    <span class="about-award-name">BEST NARRATIVE</span>
+                                                    <span class="about-award-org">IndieForce Awards 2022</span>
+                                                </div>
+                                            </div>
+                                            <div class="about-award-row">
+                                                <div class="about-award-icon silver"><i class="bi bi-shield-fill"></i></div>
+                                                <div>
+                                                    <span class="about-award-name">MOST IMMERSIVE</span>
+                                                    <span class="about-award-org">XR Experience Expo 2023</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="warhex-footer">
+            <div class="footer-logos-bar">
+                <div class="container-fluid px-5">
+                    <div class="d-flex align-items-center justify-content-between py-3">
+                        <span class="footer-logos-label">POWERED BY</span>
+                        <div class="d-flex align-items-center gap-5">
+                            <div class="footer-logo-item"><i class="bi bi-controller"></i> NEXCORE</div>
+                            <div class="footer-logo-item"><i class="bi bi-gpu-card"></i> VOLTRIX</div>
+                            <div class="footer-logo-item"><i class="bi bi-shield-fill"></i> ARMORTEK</div>
+                            <div class="footer-logo-item"><i class="bi bi-globe2"></i> NETFORGE</div>
+                            <div class="footer-logo-item"><i class="bi bi-cpu-fill"></i> SYNTHEX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-main">
+                <div class="container-fluid px-5 py-5">
+                    <div class="row g-5">
+                        <div class="col-12 col-lg-3">
+                            <a class="footer-brand d-flex align-items-center gap-2 mb-4 text-decoration-none" href="#">
+                                <img src="assets/logoWarHex.png" alt="WarHex logo" style="width:48px;height:48px;object-fit:contain;">
+                                <span>WARHEX</span>
+                            </a>
+                            <p class="footer-tagline mb-4">Next-generation offline gaming experiences. Built for warriors. Designed for the future.</p>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="footer-social-btn" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+                                <a href="#" class="footer-social-btn" aria-label="Discord"><i class="bi bi-discord"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <h6 class="footer-col-title mb-4">QUICK LINKS</h6>
+                            <ul class="footer-links list-unstyled">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#series">Series</a></li>
+                                <li><a href="#news">News</a></li>
+                                <li><a href="#products">Products</a></li>
+                                <li><a href="#about">About</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <h6 class="footer-col-title mb-4">EXPLORE</h6>
+                            <ul class="footer-links list-unstyled">
+                                <li><a href="#">Game Trailers</a></li>
+                                <li><a href="#">Patch Notes</a></li>
+                                <li><a href="#">Community</a></li>
+                                <li><a href="#">Tournaments</a></li>
+                                <li><a href="#">Leaderboard</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-2">
+                            <h6 class="footer-col-title mb-4">CONTACT</h6>
+                            <ul class="footer-links list-unstyled">
+                                <li class="mb-3">
+                                    <span class="footer-contact-label">Email</span>
+                                    <a href="mailto:contact@warhex.gg">contact@warhex.gg</a>
+                                </li>
+                                <li class="mb-3">
+                                    <span class="footer-contact-label">Phone</span>
+                                    <span class="footer-contact-value">+1 (800) 929-4367</span>
+                                </li>
+                                <li>
+                                    <span class="footer-contact-label">Address</span>
+                                    <span class="footer-contact-value">WarHex HQ, 77 Battle Blvd<br>Neo City, 10101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h6 class="footer-col-title mb-2">STAY IN THE WAR</h6>
+                            <p class="footer-tagline mb-4">Get the latest drops, patches, and battle news — direct to your inbox.</p>
+                            <div class="footer-newsletter">
+                                <input type="email" placeholder="Enter your email" class="footer-email-input">
+                                <button class="footer-subscribe-btn"><i class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-        <!--Footer Section-->
-<footer id="contact" class="warhex-footer">
-
-    <!-- Partner Logos Bar -->
-    <div class="footer-logos-bar">
-        <div class="container-fluid px-5">
-            <div class="d-flex align-items-center justify-content-between py-3">
-                <span class="footer-logos-label">POWERED BY</span>
-                <div class="d-flex align-items-center gap-5">
-                    <div class="footer-logo-item"><i class="bi bi-controller"></i> NEXCORE</div>
-                    <div class="footer-logo-item"><i class="bi bi-gpu-card"></i> VOLTRIX</div>
-                    <div class="footer-logo-item"><i class="bi bi-shield-fill"></i> ARMORTEK</div>
-                    <div class="footer-logo-item"><i class="bi bi-globe2"></i> NETFORGE</div>
-                    <div class="footer-logo-item"><i class="bi bi-cpu-fill"></i> SYNTHEX</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Footer -->
-    <div class="footer-main">
-        <div class="container-fluid px-5 py-5">
-            <div class="row g-5">
-
-                <div class="col-12 col-lg-3">
-                    <a class="footer-brand d-flex align-items-center gap-2 mb-4 text-decoration-none" href="#">
-                        <img src="assets/logoWarHex.png" alt="WarHex logo" style="width:48px;height:48px;object-fit:contain;">
-                        <span>WARHEX</span>
-                    </a>
-                    <p class="footer-tagline mb-4">
-                        Next-generation offline gaming experiences. Built for warriors. Designed for the future.
-                    </p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="footer-social-btn" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
-                        <a href="#" class="footer-social-btn" aria-label="Discord"><i class="bi bi-discord"></i></a>
+            <div class="footer-bottom">
+                <div class="container-fluid px-5">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between py-3 gap-2">
+                        <span class="footer-copy">© 2024 WarHex Inc. All rights reserved.</span>
+                        <div class="d-flex gap-4">
+                            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                            <a href="#" class="footer-bottom-link">Terms of Service</a>
+                            <a href="#" class="footer-bottom-link">Cookie Policy</a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-6 col-lg-2">
-                    <h6 class="footer-col-title mb-4">QUICK LINKS</h6>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#series">Series</a></li>
-                        <li><a href="#news">News</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-6 col-lg-2">
-                    <h6 class="footer-col-title mb-4">EXPLORE</h6>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="#">Game Trailers</a></li>
-                        <li><a href="#">Patch Notes</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Tournaments</a></li>
-                        <li><a href="#">Leaderboard</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-12 col-lg-2">
-                    <h6 class="footer-col-title mb-4">CONTACT</h6>
-                    <ul class="footer-links list-unstyled">
-                        <li class="mb-3">
-                            <span class="footer-contact-label">Email</span>
-                            <a href="mailto:contact@warhex.gg">contact@warhex.gg</a>
-                        </li>
-                        <li class="mb-3">
-                            <span class="footer-contact-label">Phone</span>
-                            <span class="footer-contact-value">+1 (800) 929-4367</span>
-                        </li>
-                        <li>
-                            <span class="footer-contact-label">Address</span>
-                            <span class="footer-contact-value">WarHex HQ, 77 Battle Blvd<br>Neo City, 10101</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-12 col-lg-3">
-                    <h6 class="footer-col-title mb-2">STAY IN THE WAR</h6>
-                    <p class="footer-tagline mb-4">Get the latest drops, patches, and battle news — direct to your inbox.</p>
-                    <div class="footer-newsletter">
-                        <input type="email" placeholder="Enter your email" class="footer-email-input">
-                        <button class="footer-subscribe-btn">
-                            <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container-fluid px-5">
-            <div class="d-flex flex-wrap align-items-center justify-content-between py-3 gap-2">
-                <span class="footer-copy">© 2024 WarHex Inc. All rights reserved.</span>
-                <div class="d-flex gap-4">
-                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
-                    <a href="#" class="footer-bottom-link">Terms of Service</a>
-                    <a href="#" class="footer-bottom-link">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</footer>
+        </footer>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
