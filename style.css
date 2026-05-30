@@ -1,4 +1,3 @@
-/* ===== BASE ===== */
 html, body {
   margin: 0;
   padding: 0;
@@ -75,7 +74,7 @@ body {
   z-index: 3;
   position: absolute;
   inset: 0;
-  padding: 3rem 1% 3rem;
+  padding: 3rem 0 3rem 3rem;
 }
 .hero-kicker {
   font-family: "Chakra Petch", sans-serif;
@@ -381,10 +380,11 @@ body {
 
 /* ===== NEWS SECTION ===== */
 .news-section {
-  background-color: #f0f4f8;
+  background-color: #ffffff;
   font-family: "Rajdhani", sans-serif;
   padding-bottom: 0;
 }
+
 
 .news-header-row {
   border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -528,6 +528,190 @@ body {
   letter-spacing: 0.05em;
   white-space: nowrap;
   margin-left: auto;
+}
+/* ===== PRODUCTS SECTION ===== */
+.products-section {
+  background-color: #ffffff;
+  font-family: "Rajdhani", sans-serif;
+  padding-bottom: 0;
+}
+
+/* Featured (cell A & G) dibuat senada putih terang seperti section series */
+.products-section .prod-cell--a,
+.products-section .prod-cell--g {
+  background: #ffffff;
+}
+
+
+.products-bento {
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 240px 240px 280px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Grid area assignment */
+.prod-cell--a { grid-area: 1 / 1 / 2 / 2; }
+.prod-cell--b { grid-area: 1 / 2 / 2 / 3; }
+.prod-cell--c { grid-area: 1 / 3 / 3 / 4; } /* span 2 baris */
+.prod-cell--d { grid-area: 2 / 1 / 3 / 2; }
+.prod-cell--e { grid-area: 2 / 2 / 3 / 3; }
+.prod-cell--f { grid-area: 3 / 1 / 4 / 2; }
+.prod-cell--g { grid-area: 3 / 2 / 4 / 4; } /* span 2 kolom */
+
+/* Base cell */
+.prod-cell {
+  border-right: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  overflow: hidden;
+  background: #f0f4f8;
+  transition: background 0.2s ease;
+  position: relative;
+}
+/* Hapus border kanan pada kolom terakhir */
+.prod-cell--c,
+.prod-cell--g { border-right: none; }
+/* Hapus border bawah pada baris terakhir */
+.prod-cell--f,
+.prod-cell--g { border-bottom: none; }
+
+/* disable hover effect for featured & limited drops */
+.products-section .prod-cell--a:hover,
+.products-section .prod-cell--g:hover,
+.products-section .prod-cell--drops:hover {
+  background: inherit;
+}
+
+/* keep other prod-cell hover as-is */
+.prod-cell:hover { background: #e8eef6; }
+
+
+/* Text-only cells */
+.prod-cell--text {
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Slightly darker for contrast cells */
+.prod-cell--mid  { background: #eaeef5; }
+.prod-cell--drops { background: #e4ecf5; }
+.prod-cell--mid:hover  { background: #e0e8f2; }
+.prod-cell--drops:hover { background: #dce6f0; }
+
+/* Image fill penuh (cell C) */
+.prod-cell--imgfull {
+  padding: 0;
+}
+.prod-img--cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) saturate(1.1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.prod-cell--imgfull:hover .prod-img--cover {
+  transform: scale(1.04);
+  filter: brightness(0.95) saturate(1.25);
+}
+
+.prod-img--sm {
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: brightness(0.88);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.prod-cell:hover .prod-img--sm {
+  transform: scale(1.05);
+  filter: brightness(0.95) saturate(1.2);
+}
+
+.prod-cell--reverse { flex-direction: row-reverse; }
+.prod-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.prod-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 0.03em;
+  margin: 0;
+  line-height: 1.3;
+}
+.prod-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.55;
+  font-weight: 500;
+  margin: 0;
+  max-width: 260px;
+}
+.prod-link {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #1a3673;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+.prod-link:hover { color: #275296; gap: 0.55rem; }
+
+.prod-kicker {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #1a3673;
+  margin: 0 0 0.4rem;
+}
+
+.products-section .prod-cell--a,
+.products-section .prod-cell--g {
+  color: #0b1120;
+}
+
+.products-section .prod-big-title,
+.products-section .prod-big-desc {
+  color: #0b1120;
+}
+
+.prod-big-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+  font-weight: 900;
+  color: #111;
+  line-height: 1.0;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.6rem;
+}
+.prod-big-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.65;
+  font-weight: 500;
+  max-width: 320px;
+  margin: 0;
 }
 
 /* ===== ABOUT SECTION ===== */
