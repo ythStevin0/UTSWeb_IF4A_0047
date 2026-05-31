@@ -10,7 +10,7 @@ function closeLogin() {
 }
 
 function togglePassword() {
-  const input = document.getElementById('loginPassword');
+  const input = document.getElementById('loginPassword'); 
   const icon = document.getElementById('eyeIcon');
   if (input.type === 'password') {
     input.type = 'text';
@@ -20,3 +20,7 @@ function togglePassword() {
     icon.className = 'bi bi-eye-fill';
   }
 }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLogin();
+});
