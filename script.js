@@ -75,6 +75,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.login-error-msg')?.remove();
   }
 
+  const seriesFilterButtons = document.querySelectorAll('.js-series-filter');
+  const seriesCards = document.querySelectorAll('.series-card');
+
+  seriesFilterButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      const filterType = button.dataset.filter?.toUpperCase();
+      if (!filterType) return;
+
+      seriesFilterButtons.forEach((btn) => {
+        btn.classList.toggle('active', btn === button);
+      });
+
+      seriesCards.forEach((card) => {
+        const categories = (card.dataset.category || '')
+          .split(',')
+          .map((category) => category.trim().toUpperCase())
+          .filter(Boolean);
+        const visible = filterType === 'ALL' || categories.includes(filterType);
+        card.closest('.col').style.display = visible ? '' : 'none';
+      });
+    });
+  });
 });
 
 // SUCCESS STATE

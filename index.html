@@ -105,12 +105,12 @@
 
                 <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
                     <ul class="nav nav-pills series-filters gap-3">
-                        <li class="nav-item"><a class="nav-link active" href="#">ALL</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">ACTION</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">RPG</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">ADVENTURE</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">STRATEGY</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">SURVIVAL</a></li>
+                        <li class="nav-item"><a class="nav-link active js-series-filter" href="#" data-filter="ALL">ALL</a></li>
+                        <li class="nav-item"><a class="nav-link js-series-filter" href="#" data-filter="ACTION">ACTION</a></li>
+                        <li class="nav-item"><a class="nav-link js-series-filter" href="#" data-filter="RPG">RPG</a></li>
+                        <li class="nav-item"><a class="nav-link js-series-filter" href="#" data-filter="ADVENTURE">ADVENTURE</a></li>
+                        <li class="nav-item"><a class="nav-link js-series-filter" href="#" data-filter="STRATEGY">STRATEGY</a></li>
+                        <li class="nav-item"><a class="nav-link js-series-filter" href="#" data-filter="SURVIVAL">SURVIVAL</a></li>
                     </ul>
                     <a href="#" class="view-all text-decoration-none fw-bold d-flex align-items-center gap-1">
                         VIEW ALL SERIES <i class="bi bi-chevron-double-right"></i>
@@ -118,8 +118,8 @@
                 </div>
                
                 <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4 mb-5">
-                    <div class="col">
-                        <div class="card series-card h-100">
+<div class="col">
+                        <div class="card series-card h-100" data-category="ACTION,MECHA">
                             <div class="position-relative">
                                 <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">01</span>
                                 <img src="assets/WarHex1.png" class="card-img-top" alt="Iron Horizon" style="height:185px;object-fit:cover;">
@@ -141,8 +141,8 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="card series-card h-100">
+<div class="col">
+                        <div class="card series-card h-100" data-category="RPG,ADVENTURE">
                             <div class="position-relative">
                                 <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">02</span>
                                 <img src="assets/WarHex2.png" class="card-img-top" alt="Project Nova" style="height:185px;object-fit:cover;">
@@ -164,8 +164,8 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="card series-card h-100">
+<div class="col">
+                        <div class="card series-card h-100" data-category="SURVIVAL,STRATEGY">
                             <div class="position-relative">
                                 <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">03</span>
                                 <img src="assets/WarHex3.png" class="card-img-top" alt="Zero Frontier" style="height:185px;object-fit:cover;">
@@ -187,8 +187,8 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="card series-card h-100">
+<div class="col">
+                        <div class="card series-card h-100" data-category="RPG">
                             <div class="position-relative">
                                 <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">04</span>
                                 <img src="assets/WarHex4.png" class="card-img-top" alt="Desert Echo" style="height:185px;object-fit:cover;">
@@ -211,7 +211,7 @@
                     </div>
 
                     <div class="col">
-                        <div class="card series-card h-100">
+                        <div class="card series-card h-100" data-category="ACTION">
                             <div class="position-relative">
                                 <span class="series-num position-absolute z-2 unskew" style="top:10px;left:10px;">05</span>
                                 <img src="assets/WarHex1.png" class="card-img-top" alt="Shadow Protocol" style="height:185px;object-fit:cover;">
@@ -804,7 +804,7 @@
                         <label class="login-label">EMAIL ADDRESS</label>
                         <div class="login-input-wrap">
                             <i class="bi bi-envelope-fill login-input-icon"></i>
-                            <input type="email" class="login-input" placeholder="warrior@warhex.gg">
+                            <input id="loginEmail" type="email" class="login-input" placeholder="warrior@warhex.gg">
                         </div>
                     </div>
 
@@ -822,7 +822,7 @@
                         </div>
                     </div>
 
-                    <button class="login-submit">
+                    <button id="loginSubmitBtn" class="login-submit">
                         <span>ENTER THE BATTLEFIELD</span>
                         <i class="bi bi-arrow-right"></i>
                     </button>
