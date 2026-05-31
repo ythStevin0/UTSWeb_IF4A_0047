@@ -719,7 +719,11 @@ body {
   position: relative;
   overflow: hidden;
   padding: 5rem 0;
+  margin-bottom: 0 !important;
 }
+
+
+
 .about-bg {
   position: absolute;
   inset: 0;
@@ -1136,3 +1140,347 @@ body {
   transition: color 0.2s ease;
 }
 .footer-bottom-link:hover { color: rgba(255,255,255,0.6); }
+
+/* ===== LOGIN OVERLAY ===== */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #060a18;
+  display: flex;
+  align-items: stretch;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+}
+.login-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Background dekoratif */
+.login-bg-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.login-deco-line {
+  position: absolute;
+  background: linear-gradient(to bottom, transparent, rgba(90,160,255,0.12), transparent);
+  width: 1px;
+  height: 100%;
+  top: 0;
+}
+.login-deco-line--1 { left: 33.33%; }
+.login-deco-line--2 { left: 50%; opacity: 0.5; }
+.login-deco-line--3 { left: 66.66%; }
+.login-deco-grid {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 3px,
+    rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
+  );
+}
+
+/* Close button */
+.login-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 10;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+.login-close:hover {
+  background: rgba(90,160,255,0.12);
+  border-color: rgba(90,160,255,0.4);
+  color: #fff;
+}
+
+/* Layout kiri-kanan */
+.login-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== KIRI: Branding ===== */
+.login-brand-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 4rem 4rem 5rem;
+  border-right: 1px solid rgba(90,160,255,0.1);
+  position: relative;
+  background: linear-gradient(135deg, rgba(6,10,24,1) 0%, rgba(10,18,42,0.95) 100%);
+}
+.login-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  margin-bottom: 3rem;
+}
+.login-brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.login-brand-name {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  color: #fff;
+}
+.login-brand-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 1.5rem;
+}
+.login-brand-title span {
+  background: linear-gradient(90deg, #5aa0ff, #a8c5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+.login-brand-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+  font-weight: 500;
+  max-width: 380px;
+  margin: 0 0 3rem;
+  border-left: 2px solid rgba(90,160,255,0.25);
+  padding-left: 1rem;
+}
+
+/* Stats dekoratif */
+.login-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.login-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.login-stat-num {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, #fff 40%, #5aa0ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.login-stat-label {
+  font-family: "Exo 2", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+}
+.login-stat-sep {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  align-self: center;
+}
+
+/* ===== KANAN: Form ===== */
+.login-form-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background: rgba(8,14,33,0.6);
+}
+.login-panel {
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.login-panel-tag {
+  font-family: "Exo 2", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: #5aa0ff;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(90,160,255,0.35);
+  padding: 0.1rem 0.45rem;
+  clip-path: polygon(3px 0,100% 0,100% calc(100% - 3px),calc(100% - 3px) 100%,0 100%,0 3px);
+}
+.login-panel-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.85);
+}
+.login-panel-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(90,160,255,0.25), transparent);
+}
+
+.login-welcome {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.login-field {
+  display: flex;
+  flex-direction: column;
+}
+.login-label {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.login-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.login-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: rgba(90,160,255,0.5);
+  font-size: 0.85rem;
+  pointer-events: none;
+  z-index: 1;
+}
+.login-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(90,160,255,0.15);
+  outline: none;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+.login-input::placeholder {
+  color: rgba(255,255,255,0.18);
+}
+.login-input:focus {
+  border-color: rgba(90,160,255,0.5);
+  background: rgba(90,160,255,0.05);
+}
+
+.login-eye-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.25);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+.login-eye-btn:hover { color: rgba(255,255,255,0.6); }
+
+.login-forgot {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(90,160,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.login-forgot:hover { color: #5aa0ff; }
+
+.login-submit {
+  width: 100%;
+  background: #1a3673;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  margin-top: 0.5rem;
+}
+.login-submit:hover {
+  background: #275296;
+  box-shadow: 0 0 24px rgba(90,160,255,0.25);
+}
+
+.login-register-text {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.3);
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+.login-register-link {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #5aa0ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.login-register-link:hover { color: #a8c5ff; }
