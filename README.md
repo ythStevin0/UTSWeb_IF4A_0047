@@ -8,3 +8,12 @@ Website Company Profile WarHex | Next-Generation Game Developer
 
 # Referensi Desain
 - Screenshot desain: https://gundam-official.com/series, https://www.kotobukiya.co.jp/en/
+
+# Screenshots
+### Dashboard
+![Preview](assets/warhex.png)
+
+---
+
+### Login
+![Preview](assets/warhex_login.png)
