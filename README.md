@@ -12,7 +12,8 @@ Website Company Profile WarHex | Next-Generation Game Developer
 # Screenshots
 ### Dashboard
 ![Preview](assets/warhex.png)
+
 ---
+
 ### Login
-![Preview](assets/warhex_logo.png)
----
+![Preview](assets/warhex_login.png)
