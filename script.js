@@ -77,6 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const seriesFilterButtons = document.querySelectorAll('.js-series-filter');
   const seriesCards = document.querySelectorAll('.series-card');
+  const seriesSearchInput = document.querySelector('.series-search-input');
+
+  const getActiveFilter = () => {
+    const activeButton = document.querySelector('.js-series-filter.active');
+    return activeButton?.dataset.filter?.toUpperCase() || 'ALL';
+  };
+
+  const updateSeriesVisibility = () => {
+    const activeFilter = getActiveFilter();
+    const query = seriesSearchInput?.value.trim().toLowerCase() || '';
+
+    seriesCards.forEach((card) => {
+      const categories = (card.dataset.category || '')
+        .split(',')
+        .map((category) => category.trim().toUpperCase())
+        .filter(Boolean);
+      const title = card.querySelector('.series-title-text')?.textContent.trim().toLowerCase() || '';
+      const genre = card.querySelector('.series-genre')?.textContent.trim().toLowerCase() || '';
+      const categoryMatch = activeFilter === 'ALL' || categories.includes(activeFilter);
+      const searchMatch = !query || title.includes(query) || genre.includes(query);
+      card.closest('.col').style.display = categoryMatch && searchMatch ? '' : 'none';
+    });
+  };
 
   seriesFilterButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -88,16 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.toggle('active', btn === button);
       });
 
-      seriesCards.forEach((card) => {
-        const categories = (card.dataset.category || '')
-          .split(',')
-          .map((category) => category.trim().toUpperCase())
-          .filter(Boolean);
-        const visible = filterType === 'ALL' || categories.includes(filterType);
-        card.closest('.col').style.display = visible ? '' : 'none';
-      });
+      updateSeriesVisibility();
     });
   });
+
+  seriesSearchInput?.addEventListener('input', updateSeriesVisibility);
 });
 
 // SUCCESS STATE

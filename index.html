@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-white border-bottom">
-        <div class="container-fluid px-3">
-            <div class="d-flex align-items-center flex-grow-1">
-                <ul class="navbar-nav flex-row align-items-center warhex-nav warhex-left">
+    <section id="navbar">
+        <nav class="navbar navbar-expand-lg bg-white border-bottom">
+            <div class="container-fluid px-3">
+                <div class="d-flex align-items-center flex-grow-1">
+                    <ul class="navbar-nav flex-row align-items-center warhex-nav warhex-left">
                     <li class="nav-item"><a class="nav-link px-2 text-dark" href="#series">SERIES</a></li>
                     <li class="nav-item"><span class="warhex-sep" aria-hidden="true"></span></li>
                     <li class="nav-item"><a class="nav-link px-2 text-dark" href="#news">NEWS</a></li>
@@ -38,6 +39,7 @@
             </div>
         </div>
     </nav>
+    </section>
 
     <main>
         <!-- Hero Section -->
@@ -112,9 +114,12 @@
                         <li class="nav-item"><a class="nav-link js-series-filter" href="#" data-filter="STRATEGY">STRATEGY</a></li>
                         <li class="nav-item"><a class="nav-link js-series-filter" href="#" data-filter="SURVIVAL">SURVIVAL</a></li>
                     </ul>
-                    <a href="#" class="view-all text-decoration-none fw-bold d-flex align-items-center gap-1">
-                        VIEW ALL SERIES <i class="bi bi-chevron-double-right"></i>
-                    </a>
+                    <div class="series-search-wrap">
+                        <div class="series-search-field">
+                            <i class="bi bi-search"></i>
+                            <input class="series-search-input" type="search" placeholder="Search series" aria-label="Search series">
+                        </div>
+                    </div>
                 </div>
                
                 <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-4 mb-5">
@@ -656,7 +661,8 @@
             </section>
         <!-- Footer -->
 
-        <footer id="contact" class="warhex-footer">
+    <section id="contact" class="contact-section">
+        <footer class="warhex-footer">
             <div class="footer-logos-bar">
                 <div class="container-fluid px-5">
                     <div class="d-flex align-items-center justify-content-between py-3">
@@ -748,9 +754,10 @@
                 </div>
             </div>
         </footer>
+    </section>
     </main>
     <!--Login-->
-<div class="login-overlay" id="loginOverlay">
+<section class="login-overlay" id="loginOverlay">
     <button class="login-close" onclick="closeLogin()" aria-label="Close">
         <i class="bi bi-x-lg"></i>
     </button>
@@ -836,7 +843,7 @@
             </div>
         </div>
     </div>
-</div>
+</section>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
  <script src="script.js"></script>
 </body>
