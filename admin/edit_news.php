@@ -4,42 +4,34 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     header('Location: login.php');
     exit;
 }
-
 require 'config.php';
-
-$error = '';
-$success = '';
+$error = ''; $success = '';
 $id = $_GET['id'] ?? 0;
 
-$stmt = $conn->prepare("SELECT * FROM products WHERE id = ?");
+$stmt = $conn->prepare("SELECT * FROM news WHERE id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
-$product = $stmt->get_result()->fetch_assoc();
-
-if (!$product) {
-    die("Produk tidak ditemukan.");
-}
+$news = $stmt->get_result()->fetch_assoc();
+if (!$news) die("News tidak ditemukan.");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'] ?? '';
-    $description = $_POST['description'] ?? '';
+    $date = $_POST['date'] ?? '';
     $image = $_POST['image'] ?? '';
-    $cell_class = $_POST['cell_class'] ?? 'prod-cell--b';
+    $tags = $_POST['tags'] ?? '';
 
-    if ($title && $description && $image) {
-        $update_stmt = $conn->prepare("UPDATE products SET title=?, description=?, image=?, cell_class=? WHERE id=?");
-        $update_stmt->bind_param("ssssi", $title, $description, $image, $cell_class, $id);
-        if ($update_stmt->execute()) {
-            $success = "Produk berhasil diperbarui!";
-            $product['title'] = $title;
-            $product['description'] = $description;
-            $product['image'] = $image;
-            $product['cell_class'] = $cell_class;
+    if ($title && $date && $image) {
+        $update = $conn->prepare("UPDATE news SET title=?, date=?, image=?, tags=? WHERE id=?");
+        $update->bind_param("ssssi", $title, $date, $image, $tags, $id);
+        if ($update->execute()) {
+            $success = "News berhasil diperbarui!";
+            $news['title'] = $title; $news['date'] = $date;
+            $news['image'] = $image; $news['tags'] = $tags;
         } else {
-            $error = "Gagal memperbarui produk: " . $conn->error;
+            $error = "Gagal: " . $conn->error;
         }
     } else {
-        $error = "Mohon lengkapi semua field yang wajib.";
+        $error = "Lengkapi semua field wajib.";
     }
 }
 ?>
@@ -48,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Produk - Admin WarHex</title>
+    <title>Edit News - Admin WarHex</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="admin-style.css">
@@ -68,12 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </nav>
 
 <div class="admin-container" style="max-width:650px;">
-    <a href="products.php" class="admin-back-link"><i class="bi bi-arrow-left"></i> KEMBALI KE PRODUCTS</a>
+    <a href="news.php" class="admin-back-link"><i class="bi bi-arrow-left"></i> KEMBALI KE NEWS</a>
 
     <div class="admin-card">
         <div class="admin-card-header">
             <span class="admin-card-header-tag">EDIT</span>
-            <span class="admin-card-header-title">Edit Produk #<?= $product['id'] ?></span>
+            <span class="admin-card-header-title">Edit News #<?= $id ?></span>
         </div>
         <div class="admin-card-body">
             <?php if($error): ?><div class="admin-alert admin-alert-danger"><?= $error ?></div><?php endif; ?>
@@ -81,25 +73,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <form method="POST" action="" class="admin-form">
                 <div class="form-group">
-                    <label class="form-label">NAMA PRODUK (TITLE)</label>
-                    <input type="text" name="title" class="form-input" value="<?= htmlspecialchars($product['title']) ?>" required>
+                    <label class="form-label">JUDUL BERITA</label>
+                    <input type="text" name="title" class="form-input" value="<?= htmlspecialchars($news['title']) ?>" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">DESKRIPSI SINGKAT</label>
-                    <textarea name="description" class="form-textarea" rows="3" required><?= htmlspecialchars($product['description']) ?></textarea>
+                    <label class="form-label">TANGGAL</label>
+                    <input type="text" name="date" class="form-input" value="<?= htmlspecialchars($news['date']) ?>" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">PATH GAMBAR</label>
-                    <input type="text" name="image" class="form-input" value="<?= htmlspecialchars($product['image']) ?>" required>
+                    <input type="text" name="image" class="form-input" value="<?= htmlspecialchars($news['image']) ?>" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">CSS CLASS BENTO</label>
-                    <input type="text" name="cell_class" class="form-input" value="<?= htmlspecialchars($product['cell_class']) ?>">
+                    <label class="form-label">TAGS</label>
+                    <input type="text" name="tags" class="form-input" value="<?= htmlspecialchars($news['tags']) ?>">
                 </div>
 
                 <div style="display:flex;gap:10px;margin-top:1.5rem;">
                     <button type="submit" class="admin-btn admin-btn-primary">SIMPAN PERUBAHAN</button>
-                    <a href="products.php" class="admin-btn admin-btn-secondary">BATAL</a>
+                    <a href="news.php" class="admin-btn admin-btn-secondary">BATAL</a>
                 </div>
             </form>
         </div>

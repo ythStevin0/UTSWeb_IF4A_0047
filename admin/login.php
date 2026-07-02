@@ -37,38 +37,127 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - WarHex</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style>
-        body { background-color: #0b0f19; color: #fff; display: flex; align-items: center; justify-content: center; height: 100vh; }
-        .login-card { background: #131a2a; border: 1px solid #334155; border-radius: 8px; padding: 2rem; width: 100%; max-width: 400px; }
-        .form-control { background: #1e293b; border-color: #334155; color: #fff; }
-        .form-control:focus { background: #1e293b; color: #fff; border-color: #6366f1; box-shadow: none; }
-        .btn-primary { background-color: #eab308; border-color: #eab308; color: #000; font-weight: bold; }
-        .btn-primary:hover { background-color: #ca8a04; border-color: #ca8a04; color: #000; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #0b0f19;
+            overflow: hidden;
+        }
+        .login-overlay {
+            position: static;
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+            transform: translateY(0);
+            height: 100vh;
+        }
     </style>
 </head>
 <body>
 
-<div class="login-card">
-    <h3 class="text-center mb-4 text-uppercase fw-bold">Admin Login</h3>
-    
-    <?php if($error): ?>
-        <div class="alert alert-danger p-2 text-center"><?= $error ?></div>
-    <?php endif; ?>
+<section class="login-overlay is-open">
+    <button class="login-close" onclick="window.location.href = '../index.php';" aria-label="Close" type="button">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <div class="login-bg-deco" aria-hidden="true">
+        <div class="login-deco-line login-deco-line--1"></div>
+        <div class="login-deco-line login-deco-line--2"></div>
+        <div class="login-deco-line login-deco-line--3"></div>
+        <div class="login-deco-grid"></div>
+    </div>
 
-    <form method="POST" action="">
-        <div class="mb-3">
-            <label>Username</label>
-            <input type="text" name="username" class="form-control" required autofocus>
+    <div class="login-content">
+        <div class="login-brand-col">
+            <a href="../index.php" class="login-brand-link">
+                <img src="../assets/WarHexLogo2.png" alt="WarHex" class="login-brand-logo">
+                <span class="login-brand-name">WARHEX</span>
+            </a>
+            <h2 class="login-brand-title">BACK TO<br>THE<br><span>BATTLEFIELD.</span></h2>
+            <p class="login-brand-desc">Your account. Your battle history. Your glory. Log in to continue where you left off.</p>
+
+            <div class="login-stats">
+                <div class="login-stat">
+                    <span class="login-stat-num">4M+</span>
+                    <span class="login-stat-label">WARRIORS ONLINE</span>
+                </div>
+                <div class="login-stat-sep"></div>
+                <div class="login-stat">
+                    <span class="login-stat-num">5</span>
+                    <span class="login-stat-label">ACTIVE SERIES</span>
+                </div>
+                <div class="login-stat-sep"></div>
+                <div class="login-stat">
+                    <span class="login-stat-num">24/7</span>
+                    <span class="login-stat-label">BATTLE READY</span>
+                </div>
+            </div>
         </div>
-        <div class="mb-4">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control" required>
+
+        <div class="login-form-col">
+            <div class="login-panel">
+                <div class="login-panel-header">
+                    <span class="login-panel-tag">AUTH</span>
+                    <span class="login-panel-title">ADMIN LOGIN</span>
+                    <span class="login-panel-line"></span>
+                </div>
+
+                <p class="login-welcome">Welcome back, admin. Enter your credentials to access the panel.</p>
+
+                <?php if($error): ?>
+                    <div style="background-color: rgba(220, 53, 69, 0.2); color: #ff6b6b; padding: 10px 15px; border-left: 4px solid #dc3545; margin-bottom: 20px; font-weight: bold; border-radius: 4px;">
+                        <?= $error ?>
+                    </div>
+                <?php endif; ?>
+
+                <form method="POST" action="" class="login-form">
+                    <div class="login-field">
+                        <label class="login-label">USERNAME</label>
+                        <div class="login-input-wrap">
+                            <i class="bi bi-person-fill login-input-icon"></i>
+                            <input name="username" type="text" class="login-input" placeholder="admin" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="login-field">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label class="login-label mb-0">PASSWORD</label>
+                        </div>
+                        <div class="login-input-wrap">
+                            <i class="bi bi-lock-fill login-input-icon"></i>
+                            <input name="password" type="password" class="login-input" placeholder="••••••••••••" id="loginPassword" required>
+                            <button class="login-eye-btn" onclick="togglePassword()" type="button" aria-label="Toggle password">
+                                <i class="bi bi-eye-fill" id="eyeIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-submit">
+                        <span>ENTER ADMIN PANEL</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary w-100">LOG IN</button>
-    </form>
-</div>
+    </div>
+</section>
+
+<script>
+function togglePassword() {
+  const input = document.getElementById('loginPassword');
+  const icon  = document.getElementById('eyeIcon');
+  const isHidden = input.type === 'password';
+  input.type      = isHidden ? 'text' : 'password';
+  icon.className  = isHidden ? 'bi bi-eye-slash-fill' : 'bi bi-eye-fill';
+}
+</script>
 
 </body>
 </html>

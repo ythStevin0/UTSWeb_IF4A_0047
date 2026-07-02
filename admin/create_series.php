@@ -4,28 +4,26 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     header('Location: login.php');
     exit;
 }
-
 require 'config.php';
-
-$error = '';
-$success = '';
+$error = ''; $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'] ?? '';
-    $description = $_POST['description'] ?? '';
+    $genre = $_POST['genre'] ?? '';
+    $release_year = $_POST['release_year'] ?? '';
     $image = $_POST['image'] ?? '';
-    $cell_class = $_POST['cell_class'] ?? 'prod-cell--b';
+    $category = $_POST['category'] ?? '';
 
-    if ($title && $description && $image) {
-        $stmt = $conn->prepare("INSERT INTO products (title, description, image, cell_class) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $title, $description, $image, $cell_class);
+    if ($title && $genre && $release_year && $image) {
+        $stmt = $conn->prepare("INSERT INTO series (title, genre, release_year, image, category) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $title, $genre, $release_year, $image, $category);
         if ($stmt->execute()) {
-            $success = "Produk berhasil ditambahkan!";
+            $success = "Series berhasil ditambahkan!";
         } else {
-            $error = "Gagal menambah produk: " . $conn->error;
+            $error = "Gagal: " . $conn->error;
         }
     } else {
-        $error = "Mohon lengkapi semua field yang wajib.";
+        $error = "Lengkapi semua field wajib.";
     }
 }
 ?>
@@ -34,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Produk - Admin WarHex</title>
+    <title>Tambah Series - Admin WarHex</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="admin-style.css">
@@ -54,12 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </nav>
 
 <div class="admin-container" style="max-width:650px;">
-    <a href="products.php" class="admin-back-link"><i class="bi bi-arrow-left"></i> KEMBALI KE PRODUCTS</a>
+    <a href="series.php" class="admin-back-link"><i class="bi bi-arrow-left"></i> KEMBALI KE SERIES</a>
 
     <div class="admin-card">
         <div class="admin-card-header">
             <span class="admin-card-header-tag">NEW</span>
-            <span class="admin-card-header-title">Tambah Produk Baru</span>
+            <span class="admin-card-header-title">Tambah Series Baru</span>
         </div>
         <div class="admin-card-body">
             <?php if($error): ?><div class="admin-alert admin-alert-danger"><?= $error ?></div><?php endif; ?>
@@ -67,26 +65,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <form method="POST" action="" class="admin-form">
                 <div class="form-group">
-                    <label class="form-label">NAMA PRODUK (TITLE)</label>
+                    <label class="form-label">JUDUL SERIES</label>
                     <input type="text" name="title" class="form-input" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">DESKRIPSI SINGKAT</label>
-                    <textarea name="description" class="form-textarea" rows="3" required></textarea>
+                    <label class="form-label">GENRE</label>
+                    <input type="text" name="genre" class="form-input" placeholder="MECHA / ACTION" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">TAHUN RILIS</label>
+                    <input type="text" name="release_year" class="form-input" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">PATH GAMBAR</label>
                     <input type="text" name="image" class="form-input" placeholder="assets/WarHex1.png" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">CSS CLASS BENTO (OPSIONAL)</label>
-                    <input type="text" name="cell_class" class="form-input" value="prod-cell--b">
-                    <span class="form-hint">Pilihan: prod-cell--b, prod-cell--d prod-cell--reverse, prod-cell--e, prod-cell--f</span>
+                    <label class="form-label">KATEGORI FILTER</label>
+                    <input type="text" name="category" class="form-input" placeholder="ACTION,MECHA">
+                    <span class="form-hint">Pisahkan dengan koma. Contoh: ACTION,MECHA</span>
                 </div>
 
                 <div style="display:flex;gap:10px;margin-top:1.5rem;">
-                    <button type="submit" class="admin-btn admin-btn-success">SIMPAN PRODUK</button>
-                    <a href="products.php" class="admin-btn admin-btn-secondary">BATAL</a>
+                    <button type="submit" class="admin-btn admin-btn-success">SIMPAN SERIES</button>
+                    <a href="series.php" class="admin-btn admin-btn-secondary">BATAL</a>
                 </div>
             </form>
         </div>

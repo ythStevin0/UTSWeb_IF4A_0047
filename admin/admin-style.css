@@ -1,0 +1,472 @@
+/* ===== ADMIN THEME — WarHex Dark Mecha ===== */
+
+/* ---------- Base ---------- */
+.admin-body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rajdhani", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #0b0f19;
+  color: #c8d6e5;
+  min-height: 100vh;
+}
+
+/* ---------- Admin Navbar ---------- */
+.admin-navbar {
+  background: linear-gradient(180deg, #0d1117 0%, #111927 100%);
+  border-bottom: 1px solid rgba(90, 160, 255, 0.15);
+  padding: 0 2rem;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-navbar-brand {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  color: #5aa0ff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.admin-navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.admin-navbar-brand:hover {
+  color: #a8c5ff;
+}
+.admin-navbar-brand .brand-slash {
+  color: rgba(90, 160, 255, 0.4);
+  font-weight: 400;
+  margin-right: 6px;
+}
+
+.admin-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.admin-nav-links li a {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(200, 214, 229, 0.55);
+  text-decoration: none;
+  padding: 20px 18px;
+  display: block;
+  transition: color 0.2s ease, background 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+.admin-nav-links li a:hover {
+  color: #fff;
+  background: rgba(90, 160, 255, 0.06);
+}
+.admin-nav-links li a.active {
+  color: #5aa0ff;
+  border-bottom-color: #5aa0ff;
+}
+.admin-nav-sep {
+  width: 1px;
+  height: 28px;
+  background: rgba(200, 214, 229, 0.1);
+}
+
+.admin-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.admin-nav-user {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(200, 214, 229, 0.5);
+  font-weight: 500;
+}
+.admin-nav-user strong {
+  color: #5aa0ff;
+  font-weight: 700;
+}
+
+.admin-btn-logout {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 7px 18px;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  background: transparent;
+  color: #ff6b6b;
+  text-decoration: none;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  transition: all 0.2s ease;
+}
+.admin-btn-logout:hover {
+  background: rgba(220, 53, 69, 0.15);
+  color: #ff9999;
+  border-color: rgba(220, 53, 69, 0.6);
+}
+
+/* ---------- Page Container ---------- */
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+/* ---------- Page Header ---------- */
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(90, 160, 255, 0.1);
+}
+.admin-page-title {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.admin-page-title .title-slash {
+  color: #5aa0ff;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+/* ---------- Buttons ---------- */
+.admin-btn {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 10px 22px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+.admin-btn-primary {
+  background: linear-gradient(135deg, #1a3a6e 0%, #275296 100%);
+  color: #fff;
+}
+.admin-btn-primary:hover {
+  background: linear-gradient(135deg, #275296 0%, #3a6bc5 100%);
+  box-shadow: 0 0 20px rgba(90, 160, 255, 0.2);
+  color: #fff;
+}
+.admin-btn-success {
+  background: linear-gradient(135deg, #0d6e3a 0%, #198754 100%);
+  color: #fff;
+}
+.admin-btn-success:hover {
+  background: linear-gradient(135deg, #198754 0%, #28a745 100%);
+  box-shadow: 0 0 20px rgba(40, 167, 69, 0.2);
+  color: #fff;
+}
+.admin-btn-danger {
+  background: linear-gradient(135deg, #6e1a1a 0%, #962727 100%);
+  color: #fff;
+}
+.admin-btn-danger:hover {
+  background: linear-gradient(135deg, #962727 0%, #c53a3a 100%);
+  box-shadow: 0 0 20px rgba(220, 53, 69, 0.2);
+  color: #fff;
+}
+.admin-btn-secondary {
+  background: rgba(200, 214, 229, 0.08);
+  color: #c8d6e5;
+  border: 1px solid rgba(200, 214, 229, 0.15);
+}
+.admin-btn-secondary:hover {
+  background: rgba(200, 214, 229, 0.15);
+  color: #fff;
+}
+.admin-btn-sm {
+  font-size: 0.7rem;
+  padding: 6px 14px;
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+
+/* ---------- Card / Panel ---------- */
+.admin-card {
+  background: linear-gradient(180deg, rgba(17, 25, 39, 0.95) 0%, rgba(11, 15, 25, 0.98) 100%);
+  border: 1px solid rgba(90, 160, 255, 0.1);
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  overflow: hidden;
+}
+.admin-card-header {
+  background: rgba(90, 160, 255, 0.06);
+  border-bottom: 1px solid rgba(90, 160, 255, 0.1);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.admin-card-header-tag {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #5aa0ff;
+  background: rgba(90, 160, 255, 0.12);
+  padding: 3px 10px;
+  display: inline-block;
+}
+.admin-card-header-title {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+.admin-card-body {
+  padding: 1.5rem;
+}
+
+/* ---------- Table ---------- */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin-table thead th {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #5aa0ff;
+  text-transform: uppercase;
+  background: rgba(90, 160, 255, 0.06);
+  border-bottom: 1px solid rgba(90, 160, 255, 0.15);
+  padding: 12px 16px;
+  text-align: left;
+}
+.admin-table tbody td {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #c8d6e5;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(200, 214, 229, 0.05);
+  vertical-align: middle;
+}
+.admin-table tbody tr {
+  transition: background 0.15s ease;
+}
+.admin-table tbody tr:hover {
+  background: rgba(90, 160, 255, 0.04);
+}
+.admin-table .table-img {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid rgba(90, 160, 255, 0.15);
+  filter: brightness(0.9);
+}
+.admin-table .cell-bold {
+  font-weight: 700;
+  color: #fff;
+}
+.admin-badge {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  background: rgba(90, 160, 255, 0.12);
+  color: #5aa0ff;
+  border: 1px solid rgba(90, 160, 255, 0.2);
+}
+.admin-table .actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+.admin-table .empty-row td {
+  text-align: center;
+  color: rgba(200, 214, 229, 0.3);
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* ---------- Forms ---------- */
+.admin-form .form-group {
+  margin-bottom: 1.25rem;
+}
+.admin-form .form-label {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(200, 214, 229, 0.6);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+.admin-form .form-input,
+.admin-form .form-textarea,
+.admin-form .form-select {
+  width: 100%;
+  background: rgba(200, 214, 229, 0.05);
+  border: 1px solid rgba(90, 160, 255, 0.15);
+  color: #fff;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+.admin-form .form-input:focus,
+.admin-form .form-textarea:focus,
+.admin-form .form-select:focus {
+  border-color: #5aa0ff;
+  box-shadow: 0 0 0 3px rgba(90, 160, 255, 0.1);
+}
+.admin-form .form-input::placeholder,
+.admin-form .form-textarea::placeholder {
+  color: rgba(200, 214, 229, 0.25);
+}
+.admin-form .form-hint {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.78rem;
+  color: rgba(200, 214, 229, 0.3);
+  margin-top: 4px;
+}
+
+/* ---------- Alerts ---------- */
+.admin-alert {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 18px;
+  margin-bottom: 1.25rem;
+  border-left: 4px solid;
+}
+.admin-alert-danger {
+  background: rgba(220, 53, 69, 0.1);
+  border-color: #dc3545;
+  color: #ff6b6b;
+}
+.admin-alert-success {
+  background: rgba(40, 167, 69, 0.1);
+  border-color: #28a745;
+  color: #5ddb83;
+}
+
+/* ---------- Dashboard Cards ---------- */
+.admin-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.admin-dash-card {
+  background: linear-gradient(180deg, rgba(17, 25, 39, 0.95) 0%, rgba(11, 15, 25, 0.98) 100%);
+  border: 1px solid rgba(90, 160, 255, 0.1);
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  position: relative;
+  overflow: hidden;
+}
+.admin-dash-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5aa0ff, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.admin-dash-card:hover {
+  border-color: rgba(90, 160, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(90, 160, 255, 0.08);
+}
+.admin-dash-card:hover::before {
+  opacity: 1;
+}
+.admin-dash-icon {
+  font-size: 2rem;
+  color: #5aa0ff;
+  margin-bottom: 1rem;
+  display: block;
+}
+.admin-dash-label {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+}
+.admin-dash-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.82rem;
+  color: rgba(200, 214, 229, 0.4);
+  margin-top: 6px;
+}
+
+/* ---------- Welcome Text ---------- */
+.admin-welcome {
+  text-align: center;
+  padding: 2rem 0;
+}
+.admin-welcome-title {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.admin-welcome-sub {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+  color: rgba(200, 214, 229, 0.4);
+  font-weight: 500;
+}
+
+/* ---------- Back link ---------- */
+.admin-back-link {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(200, 214, 229, 0.4);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+.admin-back-link:hover {
+  color: #5aa0ff;
+}

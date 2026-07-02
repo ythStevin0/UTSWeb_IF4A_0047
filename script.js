@@ -30,36 +30,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // FORM
-// Component Loader
-async function loadComponent(id, url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const html = await response.text();
-        const element = document.getElementById(id);
-        if (element) {
-            element.innerHTML = html;
-        }
-    } catch (error) {
-        console.error(`Error loading component from ${url}:`, error);
-    }
-}
-
-async function loadAllComponents() {
-    await Promise.all([
-        loadComponent("navbar-placeholder", "components/navbar.html"),
-        loadComponent("hero-placeholder", "components/hero.html"),
-        loadComponent("series-placeholder", "components/series.html"),
-        loadComponent("news-placeholder", "components/news.html"),
-        loadComponent("products-placeholder", "components/products.php"),
-        loadComponent("about-placeholder", "components/about.html"),
-        loadComponent("footer-placeholder", "components/footer.html"),
-        loadComponent("login-placeholder", "components/login.html")
-    ]);
-    initApp();
-}
-
-document.addEventListener('DOMContentLoaded', loadAllComponents);
+document.addEventListener('DOMContentLoaded', initApp);
 
 function initApp() {
   const emailInput    = document.getElementById('loginEmail');

@@ -10,18 +10,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="navbar-placeholder"></div>
+    <?php include 'components/navbar.php'; ?>
 
     <main>
-        <div id="hero-placeholder"></div>
-        <div id="series-placeholder"></div>
-        <div id="news-placeholder"></div>
-        <div id="products-placeholder"></div>
-        <div id="about-placeholder"></div>
-        <div id="footer-placeholder"></div>
+        <?php include 'components/hero.php'; ?>
+        <?php include 'components/series.php'; ?>
+        <?php include 'components/news.php'; ?>
+        <?php include 'components/products.php'; ?>
+        <?php include 'components/about.php'; ?>
+        <?php include 'components/footer.php'; ?>
     </main>
-    <!--Login-->
-    <div id="login-placeholder"></div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
  <script src="script.js"></script>
 </body>

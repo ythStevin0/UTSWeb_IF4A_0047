@@ -22,7 +22,7 @@
                     <li class="nav-item"><span class="warhex-sep" aria-hidden="true"></span></li>
                     <li class="nav-item"><a class="nav-link px-2 text-dark" href="#contact">CONTACT</a></li>
                     <li class="nav-item"><span class="warhex-sep" aria-hidden="true"></span></li>
-                    <li class="nav-item"><a class="nav-link px-2 text-dark" href="#" onclick="openLogin(); return false;">LOG IN</a></li>
+                    <li class="nav-item"><a class="nav-link px-2 text-dark" href="admin/login.php">LOG IN</a></li>
                 </ul>
             </div>
         </div>
