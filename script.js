@@ -51,7 +51,7 @@ async function loadAllComponents() {
         loadComponent("hero-placeholder", "components/hero.html"),
         loadComponent("series-placeholder", "components/series.html"),
         loadComponent("news-placeholder", "components/news.html"),
-        loadComponent("products-placeholder", "components/products.html"),
+        loadComponent("products-placeholder", "components/products.php"),
         loadComponent("about-placeholder", "components/about.html"),
         loadComponent("footer-placeholder", "components/footer.html"),
         loadComponent("login-placeholder", "components/login.html")
