@@ -17,3 +17,7 @@ Website Company Profile WarHex | Next-Generation Game Developer
 
 ### Login
 ![Preview](assets/warhex_login.png)
+
+### kedensial admin
+- username: admin
+- password: admin123
